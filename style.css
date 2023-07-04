@@ -1,0 +1,160 @@
+body {
+    background-color: #000;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #reproductor-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #poster {
+    width: 100%;
+    max-width: 300px;
+    max-height: 450px;
+    margin-bottom: 10px;
+  }
+  
+  #descripcion {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  #boton-produccion {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #E50914;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  #reproductor {
+    display: none;
+    padding: 20px;
+    background-color: #000;
+    color: #FFF;
+  }
+  
+  #info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    background-color: #1F1F1F;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  #fecha,
+  #duracion,
+  #calificacion {
+    font-size: 16px;
+    color: #FFF;
+    margin-bottom: 5px;
+  }
+  
+  #fecha::before,
+  #duracion::before,
+  #calificacion::before {
+    content: "\2022";
+    color: #E50914;
+    margin-right: 5px;
+  }
+  
+  /* Estilos para la ventana modal */
+  #modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+  }
+  
+  #modal {
+    background-color: #000;
+    color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+  }
+  
+  #cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFF;
+    cursor: pointer;
+  }
+  
+  #reproductor-modal video {
+    width: 100%;
+    height: auto;
+  }
+  
+  #boton-transmitir {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #E50914;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 768px) {
+    #reproductor-container {
+      flex-direction: column;
+    }
+    
+    #poster {
+      max-width: 100%;
+    }
+    
+    #descripcion {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+    
+    #boton-produccion {
+      width: auto;
+      max-width: none;
+      display: block;
+      margin: 10px auto 0;
+    }
+    
+    #info-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    #fecha,
+    #duracion,
+    #calificacion {
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+  }
