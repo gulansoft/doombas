@@ -33,7 +33,7 @@ z-index: 999;
 max-width: 600px;
 margin: 0 auto;
 padding: 20px;
-background: rgba(0, 0, 0, 0.8);
+background:transparent;
 color: #fff;
 border-radius: 5px;
 box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
@@ -93,7 +93,7 @@ font-weight: bold;
 .year-quality-duration span:after {
 content: attr(title);
 display: block;
-color: #300379;
+color: #b855ff;
 font-weight: bold;
 font-size: 15px;
 margin-top: 10px;
@@ -131,11 +131,12 @@ font-weight: bold;
 }
 
 .video-options label {
-margin-right: 125px;
+margin-right: 120px;
+margin-left: 10px;
 }
 
 .video-options select {
-padding: 8px;
+padding: 0px;
 font-size: 14px;
 border: none;
 background-color: #5500dd;
