@@ -1,160 +1,199 @@
 body {
-    background-color: #000;
-    color: #FFF;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #reproductor-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  #poster {
-    width: 100%;
-    max-width: 300px;
-    max-height: 450px;
-    margin-bottom: 10px;
-  }
-  
-  #descripcion {
-    flex: 1;
-    margin-left: 20px;
-  }
-  
-  #boton-produccion {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #E50914;
-    color: #FFF;
-    border: none;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    width: 100%;
-    max-width: 250px;
-  }
-  
-  #reproductor {
-    display: none;
-    padding: 20px;
-    background-color: #000;
-    color: #FFF;
-  }
-  
-  #info-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    background-color: #1F1F1F;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  #fecha,
-  #duracion,
-  #calificacion {
-    font-size: 16px;
-    color: #FFF;
-    margin-bottom: 5px;
-  }
-  
-  #fecha::before,
-  #duracion::before,
-  #calificacion::before {
-    content: "\2022";
-    color: #E50914;
-    margin-right: 5px;
-  }
-  
-  /* Estilos para la ventana modal */
-  #modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.3s;
-  }
-  
-  #modal {
-    background-color: #000;
-    color: #FFF;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 90%;
-    max-height: 90%;
-    overflow: auto;
-  }
-  
-  #cerrar-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #FFF;
-    cursor: pointer;
-  }
-  
-  #reproductor-modal video {
-    width: 100%;
-    height: auto;
-  }
-  
-  #boton-transmitir {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #E50914;
-    color: #FFF;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  /* Estilos para dispositivos móviles */
-  @media (max-width: 768px) {
-    #reproductor-container {
-      flex-direction: column;
-    }
-    
-    #poster {
-      max-width: 100%;
-    }
-    
-    #descripcion {
-      margin-left: 0;
-      margin-top: 10px;
-    }
-    
-    #boton-produccion {
-      width: auto;
-      max-width: none;
-      display: block;
-      margin: 10px auto 0;
-    }
-    
-    #info-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    #fecha,
-    #duracion,
-    #calificacion {
-      font-size: 14px;
-      margin-bottom: 3px;
-    }
-  }
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+background: url('https://cdn.discordapp.com/attachments/949448345477349466/1109652882220912722/foto_cine1_page-0001.jpg') center/cover no-repeat black;
+}
+
+.video-container {
+position: relative;
+width: 100%;
+padding-bottom: 56.25%;
+/* Aspect ratio 16:9 */
+}
+
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.chromecast-icon {
+position: absolute;
+bottom: 10px;
+right: 10px;
+color: #fff;
+font-size: 20px;
+z-index: 999;
+}
+
+.details-container {
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+background: rgba(0, 0, 0, 0.8);
+color: #fff;
+border-radius: 5px;
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+margin-top: -25px;
+}
+
+.details-container h1 {
+font-size: 25px;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+.details-container p {
+font-size: 14px;
+margin-bottom: 10px;
+text-align: justify;
+}
+
+.details-container .info-line,
+.details-container .year-quality-duration {
+display: flex;
+align-items: center;
+margin-bottom: 5px;
+}
+
+.details-container .info-line .label {
+font-weight: bold;
+margin-right: 5px;
+}
+
+.details-container .rating {
+display: flex;
+align-items: center;
+margin-top: 10px;
+}
+
+.details-container .rating i {
+margin-right: 5px;
+color: #5d09e5;
+}
+
+.details-container .rating span {
+font-size: 12px;
+font-weight: bold;
+}
+
+.details-container .year-quality-duration span {
+margin-right: 20px;
+}
+
+.year-quality-duration span.year,
+.year-quality-duration span.quality {
+color: #fff;
+font-weight: bold;
+}
+
+.year-quality-duration span:after {
+content: attr(title);
+display: block;
+color: #300379;
+font-weight: bold;
+font-size: 15px;
+margin-top: 10px;
+}
+
+.buttons-container {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 999;
+}
+
+.buttons-container .circle-button {
+width: 50px;
+height: 50px;
+background-color: rgba(0, 0, 0, 0.5);
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.buttons-container .circle-button i {
+color: #fff;
+font-size: 20px;
+}
+
+.video-options {
+display: flex;
+align-items: center;
+margin-top: 20px;
+color: #fff;
+font-weight: bold;
+}
+
+.video-options label {
+margin-right: 125px;
+}
+
+.video-options select {
+padding: 8px;
+font-size: 14px;
+border: none;
+background-color: #5500dd;
+border-radius: 3px;
+box-shadow: 0 2px 5px rgb(45, 49, 255);
+color: #fff;
+}
+
+.video-options select:focus {
+outline: none;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+.details-container .rating {
+display: flex;
+align-items: center;
+margin-top: 10px;
+font-size: 18px;
+}
+
+.details-container .rating .rating-circle {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: #5d09e5;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: 10px;
+font-size: 16px;
+font-weight: bold;
+}
+
+.details-container .rating .rating-bar {
+width: 100px;
+height: 10px;
+background-color: #ddd;
+border-radius: 5px;
+position: relative;
+}
+
+.details-container .rating .rating-progress {
+height: 100%;
+border-radius: 5px;
+background-color: #5d09e5;
+}
+
+.details-container .rating .rating-percentage {
+position: absolute;
+top: -20px;
+right: 0;
+font-size: 12px;
+font-weight: bold;
+color: #fff;
+}
+
+.details-container .rating span {
+font-size: 14px;
+font-weight: bold;
+}
